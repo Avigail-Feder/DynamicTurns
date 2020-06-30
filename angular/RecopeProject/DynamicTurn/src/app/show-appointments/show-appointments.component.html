@@ -1,0 +1,53 @@
+<div id="myModalChanging">
+    <!-- Modal content -->
+    <div class="modal-content" style="direction:rtl">
+        <div class="modal-header">
+            <span title="close" class="close" (click)="ModalClose()">&times;</span>
+            <h2 class="h2Modal">changing</h2>
+            <form #changeWithForm="ngForm">
+                <label id="ifShow">in order to change this turn,<br>
+                    press the meeting id of your partner to change.</label>
+                <input type="email" [(ngModel)]="friendId" name="friendId" required><br><br>
+                <button title="change" class="buttonsAlert" [disabled]="!changeWithForm.form.valid"
+                    (click)="onSubmit()">CHANGE</button>
+                <button title="cancel" class="buttonsAlertCancel" (click)="ModalClose()">CANCEL</button><br />
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="myModalAlert">
+    <!-- Modal content -->
+    <div class="modal-content" style="direction:rtl">
+        <div class="modal-header">
+            <span title="close" class="close" (click)="ModalAlertClose()">&times;</span>
+            <h2 class="h2Modal">message</h2>
+            <label id="ifShoww"></label><br>
+            <button title="okey" class="buttonsAlertCancel" (click)="ModalAlertClose()">OKEY</button><br />
+        </div>
+    </div>
+</div>
+
+
+<h1>My Appointmennts</h1>
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Meeting Id</th>
+        <th>destination</th>
+    </tr>
+    <tr *ngFor="let meet of userMeetings">
+        <td>{{meet.subject}}</td>
+        <td> {{meet.startTime}}</td>
+        <td> {{meet.endTime}}</td>
+        <td> {{meet.id}}</td>
+        <td id="{{meet.id}}"></td>
+        <!-- <td><input type="button" value="delete" (click)="delete(meet.id)"></td> -->
+        <td><input id="p" type="button" value="change this appointment" (click)="messageContent(meet)"
+                class="e-event-details e-text-ellipsis e-control e-btn e-lib e-flat"></td>
+        <td><input type="button" value="change with.." (click)="ModalGiving(meet.id)"
+                class="e-event-details e-text-ellipsis e-control e-btn e-lib e-flat"></td>
+    </tr>
+</table>

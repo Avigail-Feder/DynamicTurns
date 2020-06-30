@@ -1,0 +1,87 @@
+<h1 class="caption">welcome to the forum!</h1>
+<input *ngIf="!flag" type="button" value="+" (click)="newWindow()">
+<form *ngIf="flag">
+  <fieldset>
+    <legend class="caption" id="leg">new request</legend>
+    <label>My email is: </label><br>
+    <input type="text"><br>
+    <label>The destination of my turn is: </label><br>
+    <input list="destinations">
+    <datalist id="destinations">
+      <option *ngFor="let dest of destinationList" value="{{dest.firstName}} {{dest.lastName}} {{dest.description}}">
+    </datalist><br>
+    <label>In: </label><br>
+    <input type="datetime-local"><br>
+    <label>and I would like to change it to: </label><br>
+    <input type="datetime-local"><br><br>
+    <input type="text" placeholder="remark"><br>
+    <label>Thanks!</label><br>
+    <input type="submit" value="send" (click)="addToForum()">
+  </fieldset>
+</form>
+<div class="div">
+  <ul style="list-style-type:none">
+
+      <!-- *ngFor="let request in requests" -->
+    <li >Coffee</li>
+  </ul>
+</div>
+
+
+================
+
+
+
+flag: boolean = false;
+  destinationList: Destination[];
+  requests:Request[];
+  constructor(getDestService: DestinationsService) {
+    getDestService.get().subscribe(data => this.destinationList = data);
+   
+  }
+
+  ngOnInit(){
+  }
+
+  newWindow() {
+    console.log(this.destinationList);
+    console.log("before : " + this.flag + " and after : ");
+    this.flag = true;
+    console.log(this.flag)
+  }
+  addToForum(){
+    this.flag=false;
+  }
+
+
+
+
+
+
+
+=---------------
+
+
+form{
+    width: 90px;
+    margin-left: 640px;
+}
+.div{
+    height: 280px;
+    position: fixed;
+}
+#leg{
+    font-size: large;
+}
+.caption{
+    color: #777777;
+    font-family: Arial;
+    font: menu;
+    font-size:xx-large ;
+    font-weight: 300;
+}
+input{
+    font-size: large;
+}
+
+

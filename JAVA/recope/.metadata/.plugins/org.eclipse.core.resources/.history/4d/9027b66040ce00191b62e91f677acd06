@@ -1,0 +1,97 @@
+package controllers;
+
+import java.util.HashSet;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import entites.BooleanResponse;
+import entites.DB;
+import entites.User;
+import jpa.UserDAO;
+
+@Path("Users")
+public class LogIn {
+
+	// בדיקה האם קיים משתמש במערכת
+	@GET
+	@Path("/Login/{password}/{firstName}/{lastName}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public BooleanResponse logIn(@PathParam("password") String p, @PathParam("firstName") String first,
+			@PathParam("lastName") String last) {
+		
+		System.out.println("בודק אם נמצא");
+		return DB.isExistUser(p, first, last);
+	}
+
+	// הוספת משתמש חדש למערכת
+	@POST
+	@Path("/add")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public BooleanResponse add(User s) {
+
+		return DB.addUser(s);
+	}
+
+	// עדכון פרטי משתמש
+	// אם המשתמש נמצא מאתחלים שוב את תכונותיו לפי מה ששולח, אם לא- מוסיפים אותו
+	// לרשימה
+	@PUT
+	@Path("/update")
+	@Produces(MediaType.APPLICATION_JSON)
+	public BooleanResponse update(User user) {
+		return DB.update(user);
+
+	}
+
+	// מחיקת משתמש מהרשימה
+	@POST
+	@Path("/delete")
+	public BooleanResponse delete(String id) {
+		System.out.println("id " + id);
+		return DB.delete(id);
+	}
+
+	// מחזיר את כל המשתמשים
+	@GET
+	@Path("/getUsers")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public HashSet<User> getUsers() {
+
+		return DB.getUsers();
+	}
+
+	@GET
+	@Path("/getUser/{password}/{firstName}/{lastName}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public User getUser(@PathParam("password") String password, @PathParam("firstName") String firstName,
+			@PathParam("lastName") String lastName) {
+		return DB.getUser(password, firstName, lastName);
+	}
+
+	@GET
+	@Path("/isManager/{password}/{firstName}/{lastName}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public BooleanResponse isManager(@PathParam("password") String password, @PathParam("firstName") String firstName,
+			@PathParam("lastName") String lastName) {
+		return DB.isManager(password, firstName, lastName);
+	}
+	
+	@GET
+	@Path("/getUserById/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public User getUserById(@PathParam("id") String id) {
+		return DB.getUserById(id);
+	}
+	
+	
+}

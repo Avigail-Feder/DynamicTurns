@@ -1,0 +1,203 @@
+
+#chatAll{
+    border-radius: 5px;
+    height:34vw;
+    border: black 1.5px solid;
+    background-color:#eceff1;
+    width:25vw;
+}
+#head{
+  width:25vw;
+  height: 2.4vw;
+background-color: #262626;
+}
+#icon{
+  width: 2vw;
+  height: 2vw;
+  float: left;
+  position: relative;
+  left: 8px;
+  top: 10px;
+  cursor: pointer;
+}
+#divInput{
+  box-shadow: 0px -3px 2px 0px rgba(0,0,0,.1);
+  position: relative;
+  right: 2px;
+background-color: white;
+height: 3.5vw;
+width: 25.18vw;
+ border: 1px solid #797b7d; 
+}
+input[type=text]:focus {
+  outline-offset: -2px;
+}
+input[type=text] {
+    -webkit-transition: background-color ease .218s,box-shadow ease .218s,border ease .218s;
+    transition: background-color ease .218s,box-shadow ease .218s,border ease .218s;
+    background-color: #fff;
+    min-height: 38px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+    border: 0px;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
+    width:20vw;
+    top: 0.3vw;
+    font-size: large;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow:none;
+}
+/* input[type=text]
+{
+border: 1px solid #4d90fe;
+} */
+
+
+
+
+/* {
+    width:23.5vw;
+    padding: 10px 18px;
+    margin: 2%;
+    margin-top: 0;
+    box-sizing: border-box;
+    background-color:white;
+    border:solid  #e3165b;
+    height:3vw;
+    color: black;
+    font-size: larger;
+    float: left;
+    margin-left: 7px;
+    border-radius: 15px;
+} */
+#chatOld{
+    background-size: cover;
+    height: 28vw;
+    margin: 2%;
+    /* background-color: antiquewhite; */
+    background-color: #f0e68c29;
+    /* background-image: url('src\app\images\backgroud.png'); */
+    width: 23.5vw;
+    border-radius: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+.myMessage {
+    border:solid rgb(226, 223, 223);
+    font-size:large;
+    position: relative;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 4%;
+    max-width: 22vw;
+    word-wrap: break-word; 
+    background-color: rgb(226, 223, 223);
+}
+.myDivChat{
+text-align: right;
+margin: 2%;
+}
+.otherDivChat{
+    text-align: left;
+    margin: 2%;
+    }
+.myMessage::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-top: 0.3vh;
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgb(226, 223, 223) transparent transparent transparent;
+    right: 1vw;
+}
+.myWritter{
+    font-size: small;
+    margin-top: 0%;
+    position: relative;
+}
+.otherMessage {
+    background-color:white;
+    border:solid white;
+    font-size:large;
+    position: relative;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 4%;
+    max-width: 17vw;
+    word-wrap: break-word;
+}
+.otherMessage::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-top: 0.3vh;
+    border-width: 8px;
+    border-style: solid;
+    border-color:white  transparent transparent transparent;
+    left: 1vw;
+}
+.otherWritter{
+    font-size: small;
+    margin-top: 0%;
+    position: relative;
+}
+
+#loader {
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border: 9px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 7px solid #555;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    position: relative;
+    left: 10vw;
+    top: 23vw;
+  }
+  
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+
+
+
+
+
+

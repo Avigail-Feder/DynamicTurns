@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserDAO.java&apos; to &apos;DynnamicTurn/src/jpa&apos;&#x0D;&#x0A;- Original project: &apos;DynnamicTurn&apos;&#x0D;&#x0A;- Destination element: &apos;DynnamicTurn/src/jpa&apos;&#x0D;&#x0A;- Original element: &apos;jpa.UserDAO.java&apos;" description="Copy compilation unit" destination="/src&lt;jpa" element1="/src&lt;jpa{UserDAO.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1567626151095" units="1" version="1.0"/>
+</session>

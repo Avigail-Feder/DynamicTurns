@@ -1,0 +1,5 @@
+1558252219574	Rename type 'Meetings'
+1558252312480	Extract local variable 'collect'
+1558252443827	Rename local variable 'filterMeetings'
+1558252458004	Rename field 'EndTime'
+1558252492312	Rename field 'CustomerId'

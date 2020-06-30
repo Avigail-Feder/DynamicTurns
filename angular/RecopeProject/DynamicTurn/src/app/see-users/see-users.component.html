@@ -1,0 +1,51 @@
+<div id="myModalWarning">
+  <!-- Modal content -->
+  <div class="modal-content" style="direction:rtl">
+    <div class="modal-header">
+      <span title="close" class="close" (click)="ModalClose()">&times;</span>
+      <h2 class="h2Modal">warning</h2>
+      <p id="ifShow">are you sure you want to delete?</p>
+      <button title="delete" class="buttonsAlert"  (click)="delete()">DELETE</button>
+      <button title="cancel" class="buttonsAlertCancel"  (click)="ModalClose()">CANCEL</button><br />
+    </div>
+  </div>
+</div>
+
+
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>Tellephone</th>
+    <th>Email</th>
+    <th>IsManager</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.first_name}}</td>
+    <td> {{user.last_name}}</td>
+    <td> {{user.address}}</td>
+    <td>{{user.telephone}}</td>
+    <td> {{user.email}}</td>
+    <td>{{user.isManager}}</td>
+    <!-- <td><input type="button" value="details" (click)="details()"></td> -->
+    <td><input type="button" value="delete" (click)="ModalGiving(user.id)"></td>
+    <td class="dropdown">
+      <input type="button" value="update" (click)="openForm(user.identity)">
+      <form id="form" class="dropdown-content" *ngIf="playForm[user.identity]">
+        <p>Update</p>
+        <input class="form-control" type="text" value="{{user.first_name}}" #firstName placeholder="firstName">
+        <input class="form-control" type="text" value="{{user.last_name}}" #lastName placeholder="lastNaem">
+        <input class="form-control" type="text" value="{{user.id}}" placeholder="id" #id required="required">
+        <input class="form-control" type="text" value="{{user.address}}" #address placeholder="address">
+        <input class="form-control" type="text" value="{{user.telephone}}" #telephone placeholder="telephone">
+        <input class="form-control" type="text" value="{{user.password}}" #password placeholder="password">
+        <input class="form-control" type="text" value="{{user.email}}" #email placeholder="email">
+        <input style="margin: 2%;font-size:20px;"  type="button" value="cancel" (click)="closeForm(user.identity)">
+        <input style="margin: 2%;font-size:20px;"  type="button" value="submit"
+          (click)="update(user.identity,firstName.value,lastName.value,id.value,address.value,telephone.value,password.value,email.value)">
+      </form>
+    </td>
+  </tr>
+</table>

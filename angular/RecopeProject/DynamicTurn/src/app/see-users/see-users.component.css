@@ -1,0 +1,162 @@
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th{
+    color: #777777;
+    font: menu;
+    font-size: x-large;
+    font-weight: 300;
+} tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+ tr {
+    border-bottom: 1px solid #ddd;}.button4 {
+        background-color: white;
+        color: black;
+        border: 2px solid #e7e7e7;
+    }
+    
+    input[type="button"] {
+        background-color: white;
+        color: black;
+        outline: none;
+        border: 2px solid white;
+        font: menu;
+        font-size:x-large;
+    }
+    
+    input[type="button"]:hover {background-color: #f1f1f1;}
+    tr:nth-child(even) input[type="button"] {
+        background-color: #f1f1f1;
+        color: black;
+        outline: none;
+        border: 2px solid #f1f1f1;
+    }
+    
+    tr:nth-child(even) input[type="button"]:hover {
+        background-color: white;
+    }
+    .dropdown-content {
+        /* display: none; */
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);   
+    }
+    td{
+        font-style: italic;
+        font: menu;
+        font-size: x-large;
+    }
+   /* .dropdown:hover .dropdown-content {
+        display: inline-block;
+   } */
+   p{
+    margin-block-start: 3px;
+    margin-block-end: auto;
+   }
+   input{
+       font-size: large;
+   }
+   #myModalWarning{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   }.buttonsAlert {
+    background: transparent;
+    color: #e3165b;
+    width: 90px;
+    height: 40px;
+    border:none;
+    margin: auto;
+    outline: none;
+    margin-top: 2%; 
+    margin-bottom:2%; font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+    font-size: 14px;
+    font-weight: 500;
+    }
+    .buttonsAlert:hover {
+    background-color: rgba(227, 22, 91, 0.04);
+    }
+   .buttonsAlertCancel{
+    background: transparent;
+    color: rgba(0, 0, 0, 0.87);
+    width: 90px;
+    outline: none;
+    height: 40px;
+    border:none;
+    margin: auto;
+    margin-top: 2%; 
+    margin-bottom:2%; font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+    font-size: 14px;
+    font-weight: 500;
+    }
+.buttonsAlertCancel:hover
+{
+	background-color: rgba(0, 0, 0, 0.0348);
+}
+.modal-content {
+    margin: auto;
+    width: 40%;
+}
+.modal-header {
+    background-color: white;
+    color: rgb(59, 58, 58);
+    text-align: center;
+    width: 430px;
+    margin: auto;
+    direction: ltr;
+    
+    }
+.h2Modal {
+	color: #e3165b;
+	position: relative;
+	top: 9px;
+text-align: center;
+font: menu;
+font-weight: 370;
+font-size: 27px;
+}
+.close {
+    color: rgb(59, 58, 58);
+    float: left;
+    z-index: 3;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    left: 1.5%;
+    top: 1px;
+    font-size: 30px;
+    }
+
+.close:hover,
+.close:focus {
+	color:#e3165b ;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.form-control  {
+    display: block;
+	padding: .375rem .75rem;
+	margin: auto;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

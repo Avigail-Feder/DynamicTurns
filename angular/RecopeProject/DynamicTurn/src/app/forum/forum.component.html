@@ -1,0 +1,26 @@
+
+<div id="chatAll" class="chat">
+  <div id="head"></div>
+  <div id="chatOld" class="chat">
+      <div id="loader"></div>
+      <div style="display:none;" id="myDiv" class="animate-bottom">
+      </div>
+    <div id="divChat" *ngFor="let message of messages" [ngClass]=
+    "{'myDivChat':message.userId==this.usersService.user.id,'otherDivChat':message.userId!=this.usersService.user.id}">
+      <p [ngClass]="{'myMessage':message.userId==this.usersService.user.id,'otherMessage':message.userId!=this.usersService.user.id}">
+        {{message.content}}
+      </p>
+      <p [ngClass]="{'myWritter':message.userId==this.usersService.user.id,'otherWritter':message.userId!=this.usersService.user.id}" id="{{message.code}}"></p>
+    </div>
+ 
+  </div>
+  <div id="divInput">
+    <img id="icon" src="src\app\images\icon.png" (click)="addThisMessage()">
+    <input id="chatText" type="text" class="chat" (keypress)="addMessage($event.keyCode)" autocomplete="off"  name="content" [(ngModel)]="content">
+</div>
+ 
+</div>
+ 
+
+
+

@@ -1,0 +1,107 @@
+<div id="myModalWarning">
+  <!-- Modal content -->
+  <div class="modal-content" style="direction:ltr">
+    <div class="modal-header">
+      <span title="close" class="close" (click)="ModalClose()">&times;</span>
+      <h2 class="h2Modal">review password</h2>
+      <label class="title" id="ifShow">what is your first name?</label>
+      <input autocomplete="off" type="text" [(ngModel)]="tryFirstName" name="tryFirstName" class="in">
+      <label class="title" id="ifShow">what is your last name?</label>
+      <input autocomplete="off" type="text" [(ngModel)]="tryLastName" name="tryLastName" class="in">
+      <label class="title" id="ifShow">what is your id?</label>
+      <input autocomplete="off" type="text" [(ngModel)]="tryId" name="tryId" class="in">
+      <label class="title" id="ifShow">what is your email?</label>
+      <input autocomplete="off" type="text" [(ngModel)]="tryEmail" name="tryEmail" class="in">
+      <label class="title" id="ifShow">what is your address?</label>
+      <input autocomplete="off" type="text" [(ngModel)]="tryAddress" name="tryAddress" class="in">
+      <label class="title" id="ifShow">what is your telephone?</label>
+      <input autocomplete="off" type="text" [(ngModel)]="tryTelephone" name="tryTelephone" class="in">
+      <label class="title" id="ifShow">press two inputs of the password that you remember</label>
+      <input autocomplete="off" type="password" [(ngModel)]="tryPassword" name='tryPassword' class="in">
+      <br> <button title="next" class="buttonsAlert" (click)="next()">NEXT</button>
+      <button title="cancel" class="buttonsAlertCancel" (click)="ModalClose()">CANCEL</button><br />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div id="myModalPassword">
+  <!-- Modal content -->
+  <div class="modal-content" style="direction:ltr">
+    <div class="modal-header">
+      <span title="close" class="close" (click)="ModalPasswordClose()">&times;</span>
+      <h2 class="h2Modal">display password</h2>
+      <p class="title" id="ifShoww"></p>
+      <button title="okey" class="buttonsAlertCancel" (click)="ModalPasswordClose()">OKEY</button><br />
+    </div>
+  </div>
+</div>
+
+
+
+<div id="myModal">
+  <!-- Modal content -->
+  <div class="modal-content" style="direction:ltr">
+    <div class="modal-header">
+      <span title="close" class="close" (click)="ModalWarningClose()">&times;</span>
+      <h2 class="h2Modal">warning</h2>
+      <p class="title" id="ifShoww">sorry, you are not sigh in.<br>
+        if you want to get in, you need press on the REGISTER button.</p>
+      <button title="okey" class="buttonsAlertCancel" (click)="ModalWarningClose()">OKEY</button><br />
+    </div>
+  </div>
+</div>
+
+
+<div style="text-align:center">
+  <img id="back" src="src\app\images\back.jpg">
+  <form name="form" (ngSubmit)="f.form.valid && sighIn()" #f="ngForm" novalidate>
+    <div class="divWrap">
+      <input id="firstName" autocomplete="off" aria-label="First Name:" type="text" class="input"
+        [(ngModel)]="first_name" name='first_name' #first="ngModel" [ngClass]="{ 'addd':first.valid }"
+        required><br /><br />
+      <div id="first" aria-hidden="true" [ngClass]="{ 'add':first.valid , 'label':!(first.valid) }">
+        First Name:
+      </div>
+      <div *ngIf="f.submitted && first.invalid" class="invalid-feedback">
+        <label *ngIf="first.errors.required">First Name is required</label>
+      </div>
+    </div>
+
+    <div class="divWrap">
+      <input autocomplete="off" style="background-color: white" aria-label="Last Name:" class="input" type="text"
+        [(ngModel)]="last_name" name='last_name' #last="ngModel" [ngClass]="{ 'addd':last.valid }" required><br /><br />
+      <div aria-hidden="true" [ngClass]="{ 'add':last.valid, 'label':!(last.valid) }">
+        Last Name:
+      </div>
+      <div *ngIf="f.submitted && last.invalid" class="invalid-feedback">
+        <label *ngIf="last.errors.required">Last Name is required</label>
+      </div>
+    </div>
+    <!-- <label>Last Name: </label>
+    <input type="text" [(ngModel)]="last_name" name='last_name'><br /><br /> -->
+    <div class="divWrap">
+      <input autocomplete="off" value autocapitalize="none" spellcheck="false" tabindex="0" aria-label="Password:"
+        class="input" type="password" [(ngModel)]="password" name='password' #pass="ngModel"
+        [ngClass]="{ 'addd':pass.valid }" required><br /><br />
+      <div aria-hidden="true" [ngClass]="{ 'add':pass.valid,'label':!(pass.valid) }">
+        Password:
+      </div>
+      <div *ngIf="f.submitted && pass.invalid" class="invalid-feedback">
+        <label *ngIf="pass.errors.required">Password is required</label>
+      </div>
+    </div>
+    <!-- <label>Password: </label>
+    <input type="password" [(ngModel)]="password" name='Password'><br /><br /> -->
+    <button type="submit" class="buttons">Log
+      in</button>
+    <button [routerLink]="['/register']" *ngIf="!isIn" class="buttons">Register</button>
+    <button [routerLink]="['/rout-in']" *ngIf="isIn" class="buttonsAlert">Enter</button>
+    <br>
+    <span id="forgetPass" (click)="forgetPass()">did you forget the password?</span>
+    <br>
+    <!-- <button (click)="sendMail()">send email</button> -->
+  </form>

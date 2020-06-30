@@ -1,0 +1,33 @@
+package jpa;
+
+public class DestinationDAO {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	boolean isTrue;
+
+	public boolean getIsTrue() {
+		return isTrue;
+	}
+
+	public void setIsTrue(boolean isTrue) {
+		this.isTrue = isTrue;
+	}
+
+	public DestinationDAO(boolean isTrue) {
+		super();
+		this.isTrue = isTrue;
+	}
+
+	public DestinationDAO() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "BooleanResponse [isTrue=" + isTrue + "]";
+	}
+
+}

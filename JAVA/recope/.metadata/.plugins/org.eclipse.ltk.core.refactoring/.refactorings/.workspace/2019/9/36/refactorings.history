@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;tryagain&apos; to &apos;webAPI&apos;" description="Rename resource &apos;tryagain&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/tryagain" name="webAPI" stamp="1567760435520" updateReferences="true"/>
+</session>

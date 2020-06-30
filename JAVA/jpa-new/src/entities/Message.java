@@ -1,0 +1,47 @@
+package entities;
+
+import java.io.Serializable;
+import java.lang.String;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Message
+ *
+ */
+@Entity
+@Table(name = "message")
+public class Message implements Serializable {
+
+	   
+	@Id
+	private int code;
+	private String userId;
+	private String content;
+	private static final long serialVersionUID = 1L;
+
+	public Message() {
+		super();
+	}   
+	public int getCode() {
+		return this.code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}   
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}   
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+   
+}

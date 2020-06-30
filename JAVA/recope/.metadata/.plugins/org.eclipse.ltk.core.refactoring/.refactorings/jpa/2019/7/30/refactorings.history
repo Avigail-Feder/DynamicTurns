@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BooleanResponse.java&apos; to &apos;DynnamicTurn/src/entities&apos;&#x0D;&#x0A;- Original project: &apos;jpa&apos;&#x0D;&#x0A;- Destination element: &apos;DynnamicTurn/src/entities&apos;&#x0D;&#x0A;- Original element: &apos;jpa.BooleanResponse.java&apos;" description="Copy compilation unit" destination="=DynnamicTurn/src&lt;entities" element1="/src&lt;jpa{BooleanResponse.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1564256676169" units="1" version="1.0"/>
+</session>

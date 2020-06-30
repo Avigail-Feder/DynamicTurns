@@ -1,0 +1,61 @@
+package controllers;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import entites.DB;
+import entites.Meeting;
+//import jpa.MeetingDAO;
+import jpa.MeetingDAO;
+
+@Path("meetings")
+public class Meetings {
+	@GET
+	@Path("/some")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public static void some() {
+		System.out.println("some");
+	}
+	
+	
+	@GET
+	@Path("getMeetindsByDestId/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<Meeting> getById(@PathParam("id") String id) {
+		return DB.GetById(id);
+	}
+	@GET
+	@Path("getMeetings")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<Meeting> getMeetings() {
+		return DB.getMeetings();
+	}
+	@GET
+	@Path("getMeetingsByUserId/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<Meeting> getMeetindsByUserId(@PathParam("id") String id) {
+		return DB.getMeetingsByUserId(id);
+	}
+	
+	
+	@GET
+	@Path("changeWith/{firstMeeting}/{secondMeeting}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public jpa.BooleanResponse changeWith(@PathParam("firstMeeting") int firstMeeting,
+			@PathParam("secondMeeting") int secondMeeting) {
+		return MeetingDAO.chagneWith(firstMeeting, secondMeeting);
+	}
+
+
+}

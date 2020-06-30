@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="entities.DB"/>
+<fullyQualifiedTypeName name="entities.BooleanResponse"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+<fullyQualifiedTypeName name="javax.mail.internet.AddressException"/>
+<fullyQualifiedTypeName name="com.sun.tools.xjc.reader.xmlschema.bindinfo.BIConversion.User"/>
+<fullyQualifiedTypeName name="entites.BooleanResponse"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="jpa.BooleanResponse"/>
+<fullyQualifiedTypeName name="entites.DB"/>
+<fullyQualifiedTypeName name="jpa.MeetingDAO"/>
+<fullyQualifiedTypeName name="jpa.UserDAO"/>
+<fullyQualifiedTypeName name="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+</qualifiedTypeNameHistroy>

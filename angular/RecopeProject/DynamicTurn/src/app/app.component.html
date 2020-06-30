@@ -1,0 +1,11 @@
+<header class="fixed-header"><span id="DynammicSpan">Dynamic
+    Turn       | </span>
+        <abbr title="home"><img class="icon" src="src\app\images\home.png" alt="Home" [routerLink]="['/']" style="outline:none;cursor: pointer" ></abbr>
+        <abbr title="concat"><img (click)="mailMe()" class="icon"  src="src\app\images\heart.png" alt="Concat" [routerLink]="['/']" style="outline:none;cursor: pointer" ></abbr>
+</header>
+<body>
+    <router-outlet></router-outlet>
+</body>
+<footer class="fixed-footer">
+    <label> &copy; all rights reserved </label>
+</footer>

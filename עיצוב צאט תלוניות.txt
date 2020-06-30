@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+#mmm{
+width:absolute;
+height:50px;
+border: solid;
+border-radius: 6px;
+    z-index: 1;
+   opacity: 1;
+    transition: opacity 1s;
+    visibility: visible; 
+   position: relative;
+    display: inline-block;
+    border-color: blue;
+padding-left:10px;
+padding-right:10px;
+background-color:blue;
+}
+p{
+color:white;
+}
+#mmm::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: 30px;
+    margin-top: 2px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue transparent transparent transparent;
+}
+
+
+</style>
+<body style="text-align:center;">
+
+<h2>Tooltip</h2>
+<p>Move the mouse over the text below:</p>
+
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+<div id="mmm">
+<p>מה קורה?????</p></div>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_css_tooltip by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 May 2016 18:21:23 GMT -->
+</html>

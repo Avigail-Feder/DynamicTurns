@@ -1,0 +1,8 @@
+<h2>Choose destination  |  </h2>
+<h3>Press on the destination that you want</h3>
+
+<div id="pButton" *ngFor="let item of destinations">
+    <button class="buttonsAlert" (click)="setDestination(item.id)">{{item.description}} {{item.firstName}}
+        {{item.lastName}} </button>
+   
+</div>

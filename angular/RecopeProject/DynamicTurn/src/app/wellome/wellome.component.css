@@ -1,0 +1,340 @@
+h1{
+	font:menu;
+	padding:15px 43px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	font-size: 45px;  
+	text-shadow: 0.5px 0.9px  black, 1px 4px 6px #e3165e, 0 4px 5px;
+}
+button{
+	font-size: large;
+	margin-left: 2%;
+	margin-top: 15px;
+}
+.input{ 
+	font-size: large;
+	background:transparent;
+	-webkit-border-radius:4px;
+	border-radius: 4px;
+    color: #202124;
+    font-size: 16px;
+    height: 18px;
+    padding: 13px 15px;
+	box-shadow: none;
+	border:  1px solid #5a5f62;
+	/* border-bottom: 2px solid #a19f9f #505456;
+	border-top:none;
+	border-right:none;
+	border-left:none; */
+	outline: none;
+}
+.divWrap{
+	position:relative;
+	height: 5vw;
+}
+
+
+.input:focus~.label{
+color:#e3165b ;
+transform: scale(.80) translateY(-30px) translateX(-55px);
+
+}
+.input:focus{
+	border-top: 1px solid #e3165b;
+	border-right: 1px solid #e3165b;
+	border-left: 1px solid #e3165b;
+		border-bottom: 2px solid #e3165b;
+}
+.addd{
+	border-top: 1px solid #e3165b;
+	border-right: 1px solid #e3165b;
+	border-left: 1px solid #e3165b;
+	border-bottom: 2px solid #e3165b;	
+	background:white;
+	bottom: 17px;
+font-size: 16px;
+}
+/* .input:not([disabled]):focus~.label, .input[badinput="true"]~.label{
+	-webkit-transform:  scale(.80) translateY(-30px) translateX(-55px);;
+	transform: scale(.80) translateY(-30px) translateX(-55px); 
+} */
+
+
+ .add {	
+	 color:#e3165b ;
+transform: scale(.80) translateY(-30px) translateX(-55px);
+position: relative;
+bottom: 4.5vw;
+width: 81px;
+margin: auto;
+white-space: nowrap;
+background-color: white;
+font-size: 16px;
+ }
+#back{
+	height: 210px;
+}
+.label{
+	bottom: 17px;
+	color: #80868b;
+    font-size: 16px;
+    transition: transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1),-webkit-transform 150ms cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+	bottom: 4.5vw;
+	width: 81px;
+	margin: auto;
+	white-space: nowrap;
+	background-color: white;
+}
+#myModalWarning, #myModalPassword, #myModal{
+	display: none; /* Hidden by default */
+	position: absolute;
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	padding-bottom: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.buttonsAlert {
+background: transparent;
+color: #e3165b;
+width: 90px;
+height: 40px;
+border:none;
+margin: auto;
+outline: none;
+margin-top: 2%; 
+margin-bottom:2%; font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+font-size: 14px;
+font-weight: 500;
+}
+.buttonsAlert:hover {
+background-color: rgba(227, 22, 91, 0.04);
+}
+.buttons {
+	background-color: rgba(227, 22, 90, 0.082);
+	border-radius: 5px;
+	width: 90px;
+	height: 40px;
+	color: #e3165b;
+	outline: none;
+	border:none;
+	margin: auto;
+	 font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+	font-size: 14px;
+	font-weight: 500;
+	margin-left: 0.4%;
+	cursor: pointer;
+	outline: none;
+	}
+	.buttons:hover {
+	color: #e3165b;
+		background: transparent;
+	border:0.5px solid rgba(227, 22, 90, 0.185);
+	}
+.buttonsAlertCancel{
+background: transparent;
+color: rgba(0, 0, 0, 0.87);
+outline: none;
+width: 90px;
+height: 40px;
+border:none;
+margin: auto;
+margin-top: 2%; 
+margin-bottom:2%; font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+font-size: 14px;
+font-weight: 500;
+}
+.buttonsAlertCancel:hover
+{
+	background-color: rgba(0, 0, 0, 0.0348);
+}
+.modal-content {
+margin: auto;
+width: 40%;
+}
+.modal-header {
+background-color: white;
+color: rgb(59, 58, 58);
+text-align: center;
+width: 430px;
+position: relative;
+/* bottom:16vh; */
+margin: auto;
+
+}
+.h2Modal {
+	color: #e3165b;
+	position: relative;
+	top: 9px;
+	right: 2%;
+text-align: center;
+font: menu;
+font-weight: 370;
+font-size: 32px;
+margin: auto;
+}
+.close {
+color: rgb(59, 58, 58);
+float: left;
+z-index: 3;
+font-size: 28px;
+font-weight: bold;
+position: relative;
+left: 3%;
+top: 1px;
+font-size: 30px;
+}
+.in{
+	height: 10px;
+	border-top: none;
+	border-bottom:1px solid #e3165b;
+	border-left: none;
+	border-right: none;
+	font-size: 16px;
+    padding: 13px 15px;
+	box-shadow: none;
+	outline: none;
+	color:  rgb(59, 58, 58);
+}
+
+.close:hover,
+.close:focus {
+	color:#e3165b ;
+	text-decoration: none;
+	cursor: pointer;
+}
+#forgetPass{
+   cursor: pointer;  
+   color: #35373a;
+   text-decoration: underline;
+   font-size: 15px;
+		
+}
+#ifShow, #ifShoww{
+position: relative;
+bottom: 10px;
+}
+
+
+
+
+
+
+/* eeeeeeeee */
+.title{
+	    color: #e3165b;
+}
+  
+.title {
+    color: rgba(0, 0, 0, 0.54);
+}
+  
+.title{
+	    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+  
+.title{    color: rgba(0, 0, 0, 0.54);
+}
+  
+.title{    font-size: 13px;
+    top: -9px;
+    -webkit-transform: translate3d(0, -6px, 0) scale(0.92);
+    transform: translate3d(0, -6px, 0) scale(0.92);
+}
+  
+.title{
+    font-weight: 400;
+}
+  
+.title{    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+}
+  
+.title{    content: '';
+    font-style: normal;
+}
+  
+.title{    top: -11px;
+}
+  
+.title{    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    left: 0;
+    padding-left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -11px;
+    -webkit-transform: translate3d(0, 16px, 0) scale(1);
+    transform: translate3d(0, 16px, 0) scale(1);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    transition: 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+}
+  
+.title{    box-sizing: border-box;
+}
+  
+.title{    color: rgba(0, 0, 0, 0.42);
+}
+user agent stylesheet
+.label {
+    cursor: default;
+}
+  
+.title{    background: transparent;
+    color: rgba(0, 0, 0, 0.87);
+}
+  
+.title{    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+    font-size: 13px;
+    font-weight: 400;
+}
+  
+.title{    line-height: 1.4;
+    margin-bottom: 4px;
+    margin-top: 16px;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+}
+  
+.title{    display: block;
+    flex: 1 1 auto;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: normal;
+
+}
+  
+.title{    color: rgba(0, 0, 0, 0.87);
+}
+  
+.title{    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+    font-size: 14px;
+    font-weight: normal;
+}
+.invalid-feedback{
+    width: 20%;
+    margin-top: .25rem;
+    font-size: 80%;
+	color: #e3165b;
+	position: relative;
+	bottom: 8vh;
+	font-size: 13px;
+    text-align: left;
+    left: 40.5vw;;
+}

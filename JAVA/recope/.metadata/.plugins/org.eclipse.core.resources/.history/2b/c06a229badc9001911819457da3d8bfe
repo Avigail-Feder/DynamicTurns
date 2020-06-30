@@ -1,0 +1,124 @@
+package jpa;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+
+import entities.Meeting;
+
+import entities.askings;
+
+public class MeetingDAO {
+	
+	
+
+	public static List<Meeting> getMeetingsById(String id) {
+		EntityManagerFactory emf;
+		EntityManager em;
+		emf = Persistence.createEntityManagerFactory("jpa");
+		em = emf.createEntityManager();
+		List<Meeting> result;
+		em.getTransaction().begin();
+		try {
+			result = em.createQuery("select m from Meeting m where m.destId = :id").setParameter("id", id)
+					.getResultList();
+
+		} finally {
+			em.close();
+		}
+		System.out.println(result.toString());
+		return result;
+	}
+
+	public static List<askings> isIn(int first, int second) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
+		EntityManager em = emf.createEntityManager();
+		List<askings> ask = null;
+		em.getTransaction().begin();
+		try {
+
+			ask = (List<askings>) em
+					.createQuery(
+							"select a from askings a where a.firstMeeting = :firstMeetingId and a.secondMeeting = :secondMeetingId")
+					.setParameter("firstMeetingId", first).setParameter("secondMeetingId", second).getResultList();
+
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+		} finally {
+
+		}
+
+		return ask;
+	}
+
+	public static BooleanResponse switchTurns(int firstMe, String firstCust, int secondMeet, String secondCust) {
+		System.out.println("try to change");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
+		EntityManager em = emf.createEntityManager();
+		int tempId = 99999;
+		em.getTransaction().begin();
+		Meeting m=em.find(Meeting.class, firstMe);
+		em.find(Meeting.class, firstMe).setId(99999);
+		em.find(Meeting.class, 99999).setCustomerId(secondCust);
+		em.find(Meeting.class, secondMeet).setId(firstMe);
+		em.find(Meeting.class, secondMeet).setCustomerId(firstCust);
+		em.find(Meeting.class, 99999).setId(secondMeet);
+		System.out.println("change successful");
+		em.getTransaction().commit();
+		em.close();
+		return new BooleanResponse(true);
+
+	}
+
+	public static BooleanResponse chagneWith(int firstMeetingId, int secondMeetingId) {
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		List<askings> ask = isIn(firstMeetingId, secondMeetingId);
+		if (ask.isEmpty()) {
+			ask = isIn(secondMeetingId, firstMeetingId);
+		}
+
+		System.out.println(ask.isEmpty());
+		System.out.println(ask.toString());
+		if (ask.isEmpty()) {
+
+			try {
+				em.persist(new askings(firstMeetingId, secondMeetingId));
+			} catch (Exception e) {
+				em.getTransaction().setRollbackOnly();
+			} finally {
+				em.getTransaction().commit();
+				em.close();
+				return new BooleanResponse(false);
+			}
+		} else
+			try {
+				askings a = ask.stream().findFirst().get();
+				Meeting m1 = em.find(Meeting.class, a.getFirstMeeting());
+				Meeting m2 = em.find(Meeting.class, a.getSecondMeeting());
+				switchTurns(a.getFirstMeeting(), m1.getCustomerId(), a.getSecondMeeting(), m2.getCustomerId());
+
+				System.out.println(a.toString());
+				em.remove(a);
+				em.remove(new askings(a.getSecondMeeting(), a.getFirstMeeting()));
+				em.getTransaction().commit();
+				
+				
+				return new BooleanResponse(true);
+			} catch (Exception e) {
+				em.getTransaction().rollback();
+				e.printStackTrace();
+				return new BooleanResponse(false);
+			} finally {
+				em.close();
+
+			}
+
+	}
+
+}

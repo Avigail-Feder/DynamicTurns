@@ -1,0 +1,3 @@
+defaultJpaPlatform_2.1=eclipselink2_5
+eclipse.preferences.version=1
+problem.TYPE_ANNOTATED_BUT_NOT_LISTED_IN_PERSISTENCE_XML=warning
